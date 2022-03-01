@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+:root{
+    --red: #ef233c;
+    --blue: #118ab2;
+    --orange: #fb8500;
+}
+
+body{
+    background-color: var(--blue);
+}
+
+
