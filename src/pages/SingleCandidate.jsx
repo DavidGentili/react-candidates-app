@@ -30,10 +30,10 @@ const SingleCandidate = ({candidates, setCandidates}) => {
         if(correctData(candidate,newCandidate)){
             const newCandidates = [...candidates];
             const index = newCandidates.findIndex(current => current.id === id);
-            newCandidates[index].name = newCandidate.name;
-            newCandidates[index].surname = newCandidate.surname;
-            newCandidates[index].email = newCandidate.email;
-            newCandidates[index].description = newCandidate.description;
+            const keys = Object.keys(newCandidate);
+            keys.forEach(key => {
+                newCandidates[index][key] = newCandidate[key];
+            })
             api.data.update(newCandidates).then(() => {
                 setCandidates(newCandidates);
                 navigate('/');
